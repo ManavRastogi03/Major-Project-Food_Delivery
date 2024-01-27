@@ -8,7 +8,6 @@ function ProductListing({ selectedSection }) {
     const dinnerSectionRef=useRef(null)
     const snacksSectionRef=useRef(null)
 
-    // ... (similar refs for other sections)
   
     useEffect(() => {
       // Use the selectedSection prop to determine which section to scroll to
@@ -31,6 +30,34 @@ function ProductListing({ selectedSection }) {
       }
       // ... (similar conditions for other sections)
     }, [selectedSection]);
+    // At the beginning of your component or where you manage your data
+    const BurgerItems = [
+      { imageSrc: '../Images/Burger1.jpg', name: "Butter Chicken Grilled" },
+      { imageSrc: "../Images/Burger2.png", name: "veg surprise burger" },
+      { imageSrc: "../Images/Burger3.jpg", name: "Butter Chicken Grilled Burger" },
+      // Add more items as needed
+    ];
+    const BreakfastItems=[
+      {imageSrc:'../Images/Breakfast1.jpg',name:'Aloo Pratha'},
+      {imageSrc:'../Images/Breakfast2.jpg',name:'Masala Dosa'},
+      {imageSrc:'../Images/Breakfast3.jpg',name:'Missi Roti'},
+    ];
+    const DinnerItems=[
+      {imageSrc:'',name:''},
+      {imageSrc:'',name:''},
+      {image:'',name:''},
+    ]
+    const LunchItems=[
+      {imageSrc:'',name:''},
+      {imageSrc:'',name:''},
+      {imageSrc:'',name:''},
+    ]
+    const SnacksItems=[
+      {imageSrc:'',name:''},
+      {imageSrc:'',name:''},
+      {imageSrc:'',name:''},
+    ]
+
   
   return (
     <>
@@ -41,34 +68,32 @@ function ProductListing({ selectedSection }) {
                 <p class="max-w-2xl mx-auto mt-4 text-center text-gray-500 xl:mt-6">
                 List of eateries providing online food delivery services in Noida.
                 </p>
-    
+               
      
                 <h2 ref={burgerSectionRef} className="text-3xl font-bold mt-6 mb-4 text-center text-gray-800">
                     Burger
                 </h2>
-                <div className="flex justify-between  space-x-6 mt-6 xl:mt-12">
-                    <Card />
-                    <Card />
-                    <Card />
+                <div className="flex justify-between mt-6 space-x-6 xl:mt-12">
+                  {BurgerItems.map((item, index) => (
+                  <Card key={index} imageSrc={item.imageSrc} name={item.name} />
+                  ))}
                 </div>
-     
-
                 <h2 ref={breakfastSectionRef}  className="text-3xl font-bold mt-6 mb-4 text-center text-gray-800">
                     Breakfast
                 </h2>
                 <div className="flex justify-between mt-6 space-x-6 xl:mt-12">
-                    <Card />
-                    <Card />
-                    <Card />
+                {BreakfastItems.map((item, index) => (
+                  <Card key={index} imageSrc={item.imageSrc} name={item.name} />
+                  ))}
                 </div>
 
                 <h2 ref={dinnerSectionRef}  className="text-3xl font-bold  mt-6 mb-4 text-center text-gray-800">
                     Dinner
                 </h2>
                 <div className="flex justify-between space-x-6 mt-6 xl:mt-12">
-                    <Card />
-                    <Card />
-                    <Card />
+                {DinnerItems.map((item, index) => (
+                  <Card key={index} imageSrc={item.imageSrc} name={item.name} />
+                ))}
                 </div>
 
 
@@ -76,17 +101,17 @@ function ProductListing({ selectedSection }) {
                     Lunch
                 </h2>
                 <div className="flex justify-between mt-6 space-x-6 xl:mt-12">
-                    <Card />
-                    <Card />
-                    <Card />
+                {LunchItems.map((item, index) => (
+                  <Card key={index} imageSrc={item.imageSrc} name={item.name} />
+                ))}
                 </div>
                 <h2 ref={snacksSectionRef} className="text-3xl font-bold mt-6 mb-4 text-center text-gray-800">
                     snacks
                 </h2>
                 <div className="flex justify-between mt-6 space-x-6 xl:mt-12">
-                    <Card />
-                    <Card />
-                    <Card />
+                {SnacksItems.map((item, index) => (
+                  <Card key={index} imageSrc={item.imageSrc} name={item.name} />
+                ))}
                 </div>
 
                 
