@@ -35,12 +35,7 @@ function About() {
                               </h1>
                           </div>
                           <p class="mt-6 mb-10 text-base leading-7 text-gray-500">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                              labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur
-                              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                              minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           HIII This Side Manav
                           </p>
                       </div>
                   </div>

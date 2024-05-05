@@ -2,13 +2,12 @@ import React, { useRef,useEffect } from 'react'
 import Card from './Card'
 
 function ProductListing({ selectedSection }) {
+  
     const burgerSectionRef = useRef(null);
     const breakfastSectionRef = useRef(null);
     const lunchSectionRef = useRef(null);
     const dinnerSectionRef=useRef(null)
     const snacksSectionRef=useRef(null)
-
-  
     useEffect(() => {
       // Use the selectedSection prop to determine which section to scroll to
       // and call the scrollIntoView method on its ref
@@ -113,8 +112,6 @@ function ProductListing({ selectedSection }) {
                   <Card key={index} imageSrc={item.imageSrc} name={item.name} />
                 ))}
                 </div>
-
-                
             </div>
         </div>
     </>

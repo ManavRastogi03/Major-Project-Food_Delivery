@@ -8,7 +8,7 @@ import About from './components/About/About.jsx'
 import SignUp from './components/SignUp/SignUp.jsx'
 import Login from './components/LogIn/Login.jsx'
 import Contact from './components/Contact/Contact.jsx'
-import Cart from "./components/Cart/Cart.jsx"
+import Cartsidebar from './components/Cart/Cartsidebar.jsx'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root/>}>
@@ -17,7 +17,7 @@ const router=createBrowserRouter(
       <Route path="SignUp" element={<SignUp/>}/>
       <Route path='Login' element={<Login/>}/>
       <Route path='contact'element={<Contact/>}/>
-      <Route path='Cart' element={<Cart/>}/>
+      <Route path='Cart' element={<Cartsidebar/>}/>
     </Route>
   )
 )

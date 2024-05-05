@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link,NavLink} from 'react-router-dom'
 import logo from "../../Images/logo.png"
+import Cartsidebar from '../Cart/Cartsidebar';
 
 
 function Header() {
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const handleCartClick = () => {
+      setIsCartOpen(!isCartOpen);
+    };
   return (
     <header className="shadow sticky z-50 top-0">
     <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -72,16 +77,17 @@ function Header() {
                     </li> 
                     <li>
                         <NavLink
-                            to="/Cart" 
+                            to="/" 
 
                             className={({isActive}) =>
                                 `block py-2 pr-4 pl-3 duration-200 ${ isActive ? "text-red-700": "text-slate-700" } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-red-700 lg:p-0`
                             }
 
                         >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" onClick={handleCartClick}>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
+                        {isCartOpen && <Cartsidebar isOpen={isCartOpen} />}
                         </NavLink>
                     </li> 
                 </ul>
